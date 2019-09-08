@@ -1,0 +1,57 @@
+\documentclass[type=master
+]{fduthesis}
+\fdusetup{
+    style = {
+        font-size = 5,
+        footnote-style = xits,
+        bib-backend = bibtex,
+        bib-resource = {thesis.bib}
+    },
+    info = {
+        title = {论文标题},
+        title* = {英文标题},
+        degree = professional,
+        author = {作者},
+        supervisor = {指导老师},
+        department = {软件学院},
+        major = {软件工程},
+        student-id = {16222010xxx},
+        keywords = {中文关键词},
+        keywords* = {keywords}
+    }
+}
+
+\usepackage[pdf]{graphviz}
+
+\begin{document}
+
+\frontmatter
+
+\tableofcontents
+
+\begin{abstract}
+    如\cite{samar1999single}中所说，如今基于 web  的应用越来越多……
+\end{abstract}
+
+\chapter{欢迎}
+\section{Welcome to fduthesis!}
+你好，\LaTeX{}！
+\begin{figure}[htb]
+    \centering
+    \digraph[scale=0.5]{xabcd}{rankdir=TB;
+        x -> a [label="a.com"]
+        x -> b [label="b.com"]
+        x -> c [label="c.com"]
+        x -> d [label="d.com"]
+    }
+    \caption[大公司的域名分布]{%
+        大公司的域名分布 }
+\end{figure}
+
+\backmatter
+
+\printbibliography
+
+\end{document}
+
+\end{document}

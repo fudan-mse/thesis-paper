@@ -1,0 +1,12 @@
+node_modules
+main.fdb_latexmk
+main.fls
+main.xdv
+main.aux
+main.out
+*.dot
+main.bbl
+main.blg
+*.pdf
+main.thm
+main.toc
