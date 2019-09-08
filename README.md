@@ -20,7 +20,7 @@ latexmk -xelatex -shell-escape main
 
 ## 编译结果
 
-`main.pdf`
+[`main.pdf`](main.pdf)
 
 ## 自动化
 
