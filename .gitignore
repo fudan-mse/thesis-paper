@@ -8,6 +8,7 @@ main.out
 main.bbl
 main.blg
 *.pdf
+!test.pdf
 main.thm
 main.toc
 main.log
