@@ -9,18 +9,20 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v1
-      - name: Compile LaTeX document
+      - name: Compile Test document
         uses: xu-cheng/latex-action@master
         with:
           root_file: test.tex
-      - name: ls
-        run: | 
-          ls
-          git status
+      - name: Compile fduthesis document
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: fduthesis.tex
+          extra_packages: "fduthesis"
       - name: copy
         run: | 
           mkdir -p public
           cp -r test.pdf public/test.pdf
+          cp -r fduthesis.pdf public/fduthesis.pdf
       - name: Deploy
         uses: docker://peaceiris/gh-pages:v2.3.1
         env:
