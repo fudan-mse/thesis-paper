@@ -17,9 +17,15 @@ jobs:
         run: | 
           ls
           git status
+      - name: copy
+        run: | 
+          mkdir -p public
+          cp -r test.pdf public/test.pdf
       - name: Deploy
         uses: docker://peaceiris/gh-pages:v2.3.1
         env:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./
+          PUBLISH_DIR: ./public
+        with:
+          emptyCommits: true
