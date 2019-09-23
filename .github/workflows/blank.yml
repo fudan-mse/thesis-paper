@@ -15,13 +15,11 @@ jobs:
           root_file: test.tex
       - name: test
         run: |
-          ls ~
           pwd
           whoami
           latex -v
-          whence latex
-          ls /opt/texlive/
-          cp /opt/texlive/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
+          ls /root/texlive/texmf-var
+          cp /root/texlive/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
           fc-cache -fsv
       - name: Compile fduthesis document
         uses: xu-cheng/latex-action@master
