@@ -13,19 +13,12 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: test.tex
-      - name: test
-        run: |
-          pwd
-          whoami
-          ls /root/texlive/texmf-var
-          cp /root/texlive/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
-          fc-cache -fsv
       - name: Compile fduthesis document
         uses: xu-cheng/latex-action@master
         with:
           root_file: fduthesis.tex
           args: "-xelatex -file-line-error -interaction=nonstopmode"
-          extra_packages: "footmisc ctex zhnumber amsfonts fontspec libertinus-fonts metafont ptex-fontmaps ptex-fonts uptex-fonts ntheorem fduthesis"
+          extra_packages: "footmisc ctex zhnumber amsfonts fontspec libertinus-fonts metafont ptex-fontmaps ptex-fonts uptex-fonts ntheorem fduthesis xits"
       - name: copy
         run: |
           mkdir -p public

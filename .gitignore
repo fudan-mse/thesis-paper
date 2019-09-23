@@ -1,4 +1,5 @@
 node_modules
+.idea
 *.fdb_latexmk
 *.fls
 *.xdv
