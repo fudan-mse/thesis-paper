@@ -1,8 +1,8 @@
 name: Build LaTeX document
-on: 
-  push: 
+on:
+  push:
     branches:
-    - master
+      - master
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -13,14 +13,20 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: test.tex
+      - name: test
+        run: |
+          ls ~
+          pwd
+          whoami
+          fc-list
       - name: Compile fduthesis document
         uses: xu-cheng/latex-action@master
         with:
           root_file: fduthesis.tex
           args: "-xelatex -file-line-error -interaction=nonstopmode"
-          extra_packages: "footmisc ctex zhnumber fduthesis"
+          extra_packages: "footmisc ctex zhnumber amsfonts fontspec libertinus-fonts metafont ptex-fontmaps ptex-fonts uptex-fonts  fduthesis"
       - name: copy
-        run: | 
+        run: |
           mkdir -p public
           cp -r test.pdf public/test.pdf
           cp -r fduthesis.pdf public/fduthesis.pdf
