@@ -18,8 +18,8 @@ jobs:
           ls ~
           pwd
           whoami
-          texlive -v
           latex -v
+          whence latex
           ls /opt/texlive/
           cp /opt/texlive/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
           fc-cache -fsv
