@@ -18,7 +18,7 @@ jobs:
         with:
           root_file: fduthesis.tex
           args: "-xelatex -file-line-error -interaction=nonstopmode"
-          extra_packages: "footmisc ctex fduthesis"
+          extra_packages: "footmisc ctex zhnumber fduthesis"
       - name: copy
         run: | 
           mkdir -p public
