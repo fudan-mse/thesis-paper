@@ -18,7 +18,9 @@ jobs:
           ls ~
           pwd
           whoami
-          fc-list
+          ls /opt/texlive/texdir/
+          cp /opt/texlive/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
+          fc-cache -fsv
       - name: Compile fduthesis document
         uses: xu-cheng/latex-action@master
         with:
