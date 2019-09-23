@@ -18,7 +18,7 @@ jobs:
         with:
           root_file: fduthesis.tex
           args: "-xelatex -file-line-error -interaction=nonstopmode"
-          extra_packages: "footmisc ctex zhnumber amsfonts fontspec libertinus-fonts metafont ptex-fontmaps ptex-fonts uptex-fonts ntheorem fduthesis xits japanese-otf psnfss"
+          extra_packages: "footmisc ctex zhnumber amsfonts fontspec libertinus-fonts metafont ptex-fontmaps ptex-fonts uptex-fonts ntheorem fduthesis xits japanese-otf psnfss fandol"
       - name: copy
         run: |
           mkdir -p public
