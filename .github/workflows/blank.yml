@@ -17,7 +17,6 @@ jobs:
         run: |
           pwd
           whoami
-          latex -v
           ls /root/texlive/texmf-var
           cp /root/texlive/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
           fc-cache -fsv
