@@ -22,8 +22,8 @@ jobs:
       - name: Compile fduthesis with graphviz
         uses: xu-cheng/latex-action@master
         with:
-          root_file: main.tex
-          args: "-xelatex -shell-escape -f -e \"$max_repeat=7\""
+          root_file: main
+          args: "-xelatex -file-line-error -interaction=nonstopmode"
           extra_packages: "graphviz adobemapping amsfonts amsmath arphic-ttf babel-japanese baekmuk biber biblatex biblatex-gb7714-2015 bibtex caption cm ctablestack ctex currfile dvipdfmx environ etex etoolbox fancyhdr fandol filehook fontspec footmisc gbt7714 geometry graphics graphics-cfg graphics-def hyperref ifluatex ifxetex ipaex japanese-otf kantlipsum knuth-lib l3build l3experimental l3kernel l3packages latex-bin latexmk libertinus-fonts lm lm-math logreq lualatex-math lualibs luaotfload luatex luatex85 luatexbase luatexja metafont mfware ms natbib ntheorem oberdiek pgf platex platex-tools preview psnfss ptex ptex-base ptex-fontmaps ptex-fonts siunitx standalone symbol tex tex-gyre tex-gyre-math tex-ini-files tools trimspaces ucharcat ulem unicode-data unicode-math uplatex uptex uptex-base uptex-fonts url varwidth xcolor xecjk xetex xits xkeyval xstring xunicode zapfding zhlipsum zhmetrics-uptex zhnumber fduthesis"
           extra_system_packages: "graphviz"
       - name: copy
