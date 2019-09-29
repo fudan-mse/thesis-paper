@@ -17,6 +17,7 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: graphviz_test.tex
+          working_directory: tests/
           args: "-xelatex -shell-escape"
           extra_packages: 'graphviz'
           extra_system_packages: 'graphviz'
@@ -39,7 +40,7 @@ jobs:
           cp -r test.pdf public/test.pdf
           cp -r fduthesis.pdf public/fduthesis.pdf
           cp -r main.pdf public/main.pdf
-          cp -r graphviz_test.pdf public/graphviz_test.pdf
+          cp -r tests/graphviz_test.pdf public/graphviz_test.pdf
       - name: Deploy
         uses: docker://peaceiris/gh-pages:v2.3.1
         env:
