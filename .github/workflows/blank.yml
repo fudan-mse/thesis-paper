@@ -13,13 +13,20 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: test.tex
+      - name: Compile with graphviz
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: graphviz_test.tex
+          args: "-xelatex -shell-escape"
+          extra_packages: 'graphviz'
+          extra_system_packages: 'graphviz'
       - name: Compile fduthesis document
         uses: xu-cheng/latex-action@master
         with:
           root_file: fduthesis.tex
           args: "-xelatex -file-line-error -interaction=nonstopmode"
           extra_packages: "adobemapping amsfonts amsmath arphic-ttf babel-japanese baekmuk biber biblatex biblatex-gb7714-2015 bibtex caption cm ctablestack ctex currfile dvipdfmx environ etex etoolbox fancyhdr fandol filehook fontspec footmisc gbt7714 geometry graphics graphics-cfg graphics-def hyperref ifluatex ifxetex ipaex japanese-otf kantlipsum knuth-lib l3build l3experimental l3kernel l3packages latex-bin latexmk libertinus-fonts lm lm-math logreq lualatex-math lualibs luaotfload luatex luatex85 luatexbase luatexja metafont mfware ms natbib ntheorem oberdiek pgf platex platex-tools preview psnfss ptex ptex-base ptex-fontmaps ptex-fonts siunitx standalone symbol tex tex-gyre tex-gyre-math tex-ini-files tools trimspaces ucharcat ulem unicode-data unicode-math uplatex uptex uptex-base uptex-fonts url varwidth xcolor xecjk xetex xits xkeyval xstring xunicode zapfding zhlipsum zhmetrics-uptex zhnumber fduthesis"
-      - name: Compile fduthesis with graphviz
+      # - name: Compile fduthesis with graphviz
         uses: xu-cheng/latex-action@master
         with:
           root_file: main
@@ -32,6 +39,7 @@ jobs:
           cp -r test.pdf public/test.pdf
           cp -r fduthesis.pdf public/fduthesis.pdf
           cp -r main.pdf public/main.pdf
+          cp -r graphviz_test.pdf public/graphviz_test.pdf
       - name: Deploy
         uses: docker://peaceiris/gh-pages:v2.3.1
         env:
