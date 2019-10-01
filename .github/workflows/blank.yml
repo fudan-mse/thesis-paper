@@ -39,6 +39,8 @@ jobs:
           cp -r test.pdf public/test.pdf
           cp -r fduthesis.pdf public/fduthesis.pdf
           cp -r main.pdf public/main.pdf
+          dot -Tpdf -o tests/xabcd.pdf tests/xabcd.dot
+          cp -r tests/xabcd.pdf public/xabcd.pdf
           cp -r tests/graphviz_test.pdf public/graphviz_test.pdf
       - name: Deploy
         uses: docker://peaceiris/gh-pages:v2.3.1
