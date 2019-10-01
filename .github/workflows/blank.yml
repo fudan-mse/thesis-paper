@@ -19,7 +19,13 @@ jobs:
           root_file: graphviz_test.tex
           working_directory: tests/
           args: "-xelatex -shell-escape"
-          extra_packages: 'graphviz'
+          extra_system_packages: 'graphviz'
+      - name: Compile again
+        uses: dante-ev/latex-action@master
+        withs:
+          root_file: graphviz_test.tex
+          working_directory: tests/
+          args: "xelatex"
           extra_system_packages: 'graphviz'
       - name: Compile fduthesis document
         uses: xu-cheng/latex-action@master
