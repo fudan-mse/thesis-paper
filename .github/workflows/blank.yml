@@ -14,7 +14,7 @@ jobs:
         with:
           root_file: test.tex
       - name: Compile with graphviz
-        uses: xu-cheng/latex-action@master
+        uses: dante-ev/latex-action@master
         with:
           root_file: graphviz_test.tex
           working_directory: tests/
